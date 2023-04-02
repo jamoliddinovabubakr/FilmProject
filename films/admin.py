@@ -4,4 +4,4 @@ from films.models import Film
 
 @admin.register(Film)
 class FilmAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['name', 'price']

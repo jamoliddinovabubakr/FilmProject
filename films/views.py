@@ -12,10 +12,10 @@ class FilmViewSet(ModelViewSet):
     queryset = Film.objects.all()
     serializer_class = FilmSerializer
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
-    filterset_fields = ['price']
+    filterset_fields = ['price', 'name']
     search_fields = ['name', 'director']
     ordering_fields = ['ordering', 'name']
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     authentication_classes = [JWTAuthentication]
 
     def perform_create(self, serializer):
